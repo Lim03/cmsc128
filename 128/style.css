@@ -1,0 +1,677 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+/* sets default properties for all sections */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+/* makes scrolling smooth */
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* CUSTOM SCROLL BAR */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* STYLES THAT APPLY TO MANY */
+/* padding for all sections */
+section{
+    padding: 100px 0;
+}
+/* the maximum width of all sections */
+.max-width{ 
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+/* the font for about, sample, contact, and footer */
+.about, .sample-portfolio, .contact, footer{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+/* the arrangement of about and contact section's contents */
+.about .about-content, .contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+/* the style of all section titles */
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 55px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    font-family: 'Lobster', sans-serif;
+}
+
+/* NAVIGATION BAR */
+/* the style of... */
+/* #...the navigation bar */
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    transition: all 0.3s ease;
+}
+/* #...the navigation bar when scrolled down*/
+.navbar.sticky{
+    padding: 15px 0;
+    background: #262626;
+}
+/* ...the maximum width of the navigation bar */
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* #...the logo of the website */
+.navbar .logo a{
+    color: #2077EC;
+    font-family: 'Lobster', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+}
+/* ...the "Flat" in the logo */
+.navbar .logo .flat{
+    color: #FFCD43;
+    transition: all 0.3s ease;
+}
+/* ...the "Icons" in the logo */
+.navbar .logo .icons{
+    color: #D94637;
+    transition: all 0.3s ease;
+}
+/* ...the arrangement of navigation bar contents */
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+/* #...the navigation bar contents */
+.navbar .menu li a{
+    display: block;
+    color: #262626;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+/* #...the navigation bar contents when hovered over*/
+.navbar .menu li a:hover{
+    color: #FFCD43;
+}
+/* ...the navigation bar contents when scrolling */
+.navbar.sticky .menu li a{
+    color: White;
+}
+/* ...the navigation bar contents when hovered over when scrolling */
+.navbar.sticky .menu li a:hover{
+    color: #FFCD43;
+}
+
+/* MENU AND SCROLL UP BUTTON */
+/* the style of... */
+/* #...the hamburger menu button in the navigation bar when the window is resized (i.e., width is decreased) */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+/* #...the scroll up button that will return the user back to the homepage when clicked */
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: White;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #262626;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+/* ...the scroll up button that appears when user is at the lower sections of the website */
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+/* ...the scroll up button when hovered over*/
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+
+/* HOMEPAGE */
+/* the style of... */
+/* #...the homepage */
+.home{
+    display: flex;
+    background: url("images/banner.webp") no-repeat center;
+    background-color: #FFEBE8;
+    background-position: 550px 25px;
+    background-size: 950px;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    background-attachment: fixed;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+/* ...maximum width of the homepage */
+.home .max-width{
+  width: 100%;
+  display: flex;
+}
+.home .max-width .row{
+  margin-right: 0;
+}
+/* ...the contents of the homepage */
+.home .home-content{
+    margin-top: 30px;
+}
+/* ...the first line of text in the homepage ("Hi! I'm Limuelle and I design") */
+.home .home-content .text-1{
+    font-size: 40px;
+    font-weight: 1000;
+    color: #2077EC;
+}
+/* ...the second line of text in the homepage ("Flat Icons") */
+.home .home-content .text-2{
+    font-family: 'Lobster', sans-serif;
+    font-size: 100px;
+    font-weight: 600;
+    color: #0B3B7B;
+    margin-left: -3px;
+}
+/* ...the third line of text in the homepage ("about" *typing animation*) */
+.home .home-content .text-3{
+    font-size: 40px;
+    font-weight: 600;
+    color: #2077EC;
+    margin: 5px 0;
+}
+/* ...the typing animation in the third line of text in the homepage */
+.home .home-content .text-3 span{
+    font-size: 50px;
+    color: #FFCD43;
+    font-weight: 600;
+}
+/* ...the hyperlink buttons in the homepage */
+.home .home-content a{
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    padding: 12px 30px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+/* ...the samples button in the homepage */
+.home .home-content .samples-first a{
+    background: #0B3B7B;
+    border: 2px solid #0B3B7B;
+}
+/* ...the portfolio button in the homepage */
+.home .home-content .portfolio a{
+    background: #D94637;
+    border: 2px solid #D94637;
+}
+/* ...the samples button in the homepage when hovered over */
+.home .home-content .samples-first a:hover{
+    color: #0B3B7B;
+    background: none;
+}
+/* ...the portfolio button in the homepage when hovered over */
+.home .home-content .portfolio a:hover{
+    color: #D94637;
+    background: none;
+}
+
+/* ABOUT SECTION */
+/* the style of... */
+/* #...the about section */
+.about{
+    font-family: 'Roboto Condensed', sans-serif;
+    color: White;
+    background: #3E89EE;
+}
+/* ...the title of about section */
+.about .max-width .title{
+    color: White;
+}
+/* ...the coverage of the website owner's image */
+.about .about-content .left{
+    width: 45%;
+}
+/* ...the website owner's image */
+.about .about-content .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+/* ...the coverage of the website owner's words */
+.about .about-content .right{
+    width: 55%;
+}
+/* #...the header of the website owner's words*/
+.about .about-content .right h3{
+    font-size: 35px;
+    font-weight: 600;
+    color: #FFCD43;
+    margin-bottom: 10px;
+}
+/* #...the questions */
+.about .about-content .right span{
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* #...the website owner's words (paragraph) */
+.about .about-content .right p{
+    font-size: 20px;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+/* #...the contact button in the about section */
+.about .about-content .right a{
+    display: inline-block;
+    background: #FFCD43;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 2px solid #FFCD43;
+    transition: all 0.3s ease;
+}
+/* ...the contact button when hovered over in the about section */
+.about .about-content .right a:hover{
+    color: #FFCD43;
+    background: none;
+}
+
+
+/* SAMPLES SECTION */
+/* the style of... */
+/* #...the samples section */
+.sample-portfolio{
+    font-family: 'Roboto Condensed', sans-serif;
+    background: #072349;
+}
+/* ...the samples section title */
+.sample-portfolio .max-width .title{
+    color: White;
+}
+/* #...the carousel cards */
+.sample-portfolio .carousel .card{
+    background: #84B4F4;
+    border-radius: 20px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+/* ...the carousel cards when hovered over */
+.sample-portfolio .carousel .card:hover{
+    background: #FFCD43;
+}
+/* #...the image-holder inside the carousel card */
+.sample-portfolio .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+/* ...the image-holder inside the carousel card when hovered over */
+.sample-portfolio .carousel .card:hover .box{
+    transform: scale(1.05);
+}
+/* ...the invitation text inside the carousel card */
+.sample-portfolio .carousel .card .text{
+    font-size: 15px;
+    font-weight: 500;
+    color: #0B3B7B;
+    margin: 15px 0 7px 0;
+}
+/* #...the image inside the carousel card */
+.sample-portfolio .carousel .card img{
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 6%;
+    border: 5px solid #072349;
+    transition: all 0.3s ease;
+}
+/* ...the image inside the carousel card when hovered over */
+.sample-portfolio .carousel .card:hover img{
+    border-color: #072349;
+}
+/* #...the horizontal space at the bottom of the section where the owl dots are placed */
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+/* ...the owl dot at the bottom part of the section which can be used to navigate the carousel */
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none!important; /* will override all previous styling rules */
+    border-radius: 50%;
+    border: 2px solid #3E89EE!important; /* will override all previous styling rules */
+    transition: all 0.3s ease;
+}
+/* ...the owl dot when active */
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+/* ...the owl dot when active and hovered over */
+.owl-dot.active,
+.owl-dot:hover{
+    background: #3E89EE!important; /* will override all previous styling rules */
+}
+
+/* CONTACTS SECTION */
+/* the style of... */
+/* #...the contacts section */
+.contact{
+    font-family: 'Roboto Condensed', sans-serif;
+    background: #FFCD43;
+}
+/* ...the columns in the contacts section (i.e., the contact details and contact form column) */
+.contact .contact-content .column{
+    width: calc(50% - 30px);
+}
+/* #...the two headers in the contacts section ("I would love to hear from you!", "Message me") */
+.contact .contact-content .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+/* #...the invitation text in the left part of the section */
+.contact .contact-content .left p{
+    text-align: justify;
+}
+/* #...the icons in the left part of the section */
+.contact .contact-content .left .icons{
+    margin: 10px 0;
+}
+/* ...the rows where the contact detail are placed*/
+.contact .contact-content .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+/* #...the contact details */
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+/* ...the icons associated with the contact details */
+.contact .contact-content .row i{
+    font-size: 25px;
+    color: #262626;
+}
+/* ...the type of contact detail (e.g., Name) */
+.contact .contact-content .info .head{
+    font-weight: 500;
+}
+/* ...the actual contact detail (e.g., Limuelle Alamil) */
+.contact .contact-content .info .sub-title{
+    color: #333;
+}
+/* ...the field for name and email inputs */
+.contact .right form .fields{
+    display: flex;
+}
+/* #...the field for name, email, and subject inputs */
+.contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+/* #...the field for message input */
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+}
+/* ...the right margin of the field for name input (to separate name and email) */
+.contact .right form .name{
+    margin-right: 10px;
+}
+/* #...the whole contact form */
+.contact .right form .field input,
+.contact .right form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Roboto Condensed', sans-serif;
+    transition: all 0.3s ease;
+}
+/* ...the border color of the input fields when clicked (focused) */
+.contact .right form .field input:focus,
+.contact .right form .textarea textarea:focus{
+    border-color: #b3b3b3;
+}
+/* ...the textarea where users can type a message */
+.contact .right form .textarea textarea{
+  padding-top: 10px;
+  resize: none;
+}
+/* ...the bottom area of the form where the send button is located */
+.contact .right form .button-area{
+  display: flex;
+  align-items: center;
+}
+/* #...the send button */
+.right form .button-area button{
+  color: #fff;
+  display: block;
+  width: 160px!important;
+  height: 45px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-wrap: nowrap;
+  background: #262626;
+  border: 2px solid #262626;
+  transition: all 0.3s ease;
+}
+/* ...the send button when hovered over */
+.right form .button-area button:hover{
+  color: #262626;
+  background: none;
+}
+
+/* FOOTER */
+/* the style of... */
+/* #...the footer */
+footer{
+    background: #262626;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Lobster', sans-serif;
+    font-size: 20px;
+}
+/* ...the "Lim" part of the logo in the footer */
+footer .lim{
+    color: #2077EC;
+}
+/* ...the "Flat" part of the logo in the footer */
+footer .flat{
+    color: #FFCD43;
+}
+/* ...the "Icons" part of the logo in the footer */
+footer .icons{
+    color: #D94637;
+}
+/* ...the copyright information of the website */
+footer .year,
+footer i{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 15px;
+}
+/* ...the social media icons */
+footer .socials i{
+    padding: 10px 10px 10px 0px;
+    color: White;
+}
+
+/* RESPONSIVE MEDIA QUERY */
+/* the following CSS styling are applied as the max-width changes */
+@media (max-width: 1100px) { /* full screen - 1300px */
+    .about .about-content .left img{
+        height: 350px;      /* originally 400px */
+        width: 350px;       /* originally 400px */
+    }
+}
+@media (max-width: 990px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 950px){
+    .menu-btn{
+        display: block;
+        z-index: 999;       /* puts the menu button on top of the other contents */
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";   /* fa-times; the x button */    
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #3E89EE;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .about .about-content .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .contact .contact-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
+    .about .about-content .right .text{
+        font-size: 19px;
+    }
+    .contact .right form .fields{
+        flex-direction: column;
+    }
+    .contact .right form .name,
+    .contact .right form .email{
+        margin: 0;
+    }
+    .right form .error-box{
+       width: 150px;
+    }
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}
